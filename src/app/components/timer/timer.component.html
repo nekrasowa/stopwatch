@@ -1,0 +1,30 @@
+<div>
+  <p class="text-2xl text-center font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
+    <!-- {{timer | async}} -->
+    {{timerValue}}
+  </p>
+  <div class="mt-8 flex gap-x-4 sm:justify-center">
+    <button type="button" id="startBtn"
+      [disabled]="isDisabledStart"
+      class="inline-flex items-center rounded-md border border-transparent bg-green-800 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      [ngStyle]="{backgroundColor: getColor()}"
+      (click)="startTimer()">
+      Start
+    </button>
+    <button type="button"
+      class="inline-flex items-center rounded-md border border-transparent bg-amber-400 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      (click)="clickBtn$.next($event)">
+      Wait
+    </button>
+    <button type="button"
+      class="inline-flex items-center rounded-md border border-transparent bg-red-800 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      (click)="stopTimer()">
+      Stop
+    </button>
+    <button type="button"
+      class="inline-flex items-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      (click)="resetTimer()">
+      Reset
+    </button>
+  </div>
+</div>
